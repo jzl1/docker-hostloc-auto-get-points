@@ -1,3 +1,2 @@
-rsyslogd
 cron
-tail -F /var/log/syslog /app/cron.log
+tail -F /app/cron.log

@@ -1,5 +1,4 @@
 #!/bin/bash
-tail -F /app/cron.log
 set i=2
 while true
 do

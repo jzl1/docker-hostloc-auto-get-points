@@ -1,4 +1,5 @@
 #!/bin/bash
+python3 hostloc_get_points.py >> /app/app.log
 set i=2
 while true
 do

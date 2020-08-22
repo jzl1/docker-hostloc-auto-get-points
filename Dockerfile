@@ -7,11 +7,9 @@ RUN apt-get update -y \
 	&& pip install requests \
     && wget https://raw.githubusercontent.com/xirikm/hostloc-auto-get-points/master/hostloc_get_points.py \
 	&& wget https://raw.githubusercontent.com/jzl1/docker-hostloc-auto-get-points/master/run.sh \
-    && chmod +x run.sh \
+	&& wget https://raw.githubusercontent.com/jzl1/docker-hostloc-auto-get-points/master/main.sh \
+    && chmod +x *.sh \
     && touch ./cron \
-	&& touch /app/cron.log \
-    && echo "*/180 * * * * root python3 hostloc_get_points.py >> /app/cron.log" >> /app/cron \
-    && crontab /app/cron \
-	&& cp /app/cron /etc/crontab \
+	&& touch /app/app.log \
 	&& rm -rf /var/lib/apt/lists/* \
-CMD  ["bash","/app/run.sh"]
+CMD ["bash","/app/main.sh"]
